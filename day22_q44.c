@@ -2,16 +2,22 @@
 
 int main() {
     int n, i;
-    float sum = 1.0;
+    float sum = 0;
 
     printf("Enter number of terms: ");
     scanf("%d", &n);
 
-    for (i = 2; i <= n; i++) {
-        sum = sum + (float)(2 * i - 1) / (2 * i);
-    }
+    if (n >= 1) {
+        sum = 1;
 
-    printf("Sum of series = %.2f\n", sum);
+        for (i = 2; i <= n; i++) {
+            sum = sum + (float)(2 * i - 1) / (2 * i);
+        }
+
+        printf("Sum of series = %.2f\n", sum);
+    } else {
+        printf("Invalid number of terms\n");
+    }
 
     return 0;
 }
